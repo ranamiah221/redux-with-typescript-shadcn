@@ -1,6 +1,7 @@
 import type { RootState } from "@/redux/store";
 import type { ITask } from "@/types/types";
 import { createSlice, type PayloadAction, nanoid } from "@reduxjs/toolkit";
+import { deleteUser } from "../user/userSlice";
 
 
 interface InitialState {
@@ -17,6 +18,7 @@ const initialState: InitialState = {
             description: " iuhuigtzsezrdxjckjk;lkjhjdszdxfghj",
             priority: "High",
             dueDate: "2025-07-09T18:00:00.000Z",
+            assignedTo:null
         },
         {
             id: "n4TzEFsPcCx2_T_IcnrV01",
@@ -25,19 +27,21 @@ const initialState: InitialState = {
             description: " iuhuigtzsezrdxjckjk;lkjhjdszdxfghj",
             priority: "Low",
             dueDate: "2025-07-09T18:00:00.000Z",
+            assignedTo:null
         },
 
     ],
     filter: "All"
 }
 
-type DraftTask = Pick<ITask, "title" | "description" | "priority" | "dueDate">
+type DraftTask = Pick<ITask, "title" | "description" | "priority" | "dueDate"|"assignedTo">
 
 const createTask = (taskData: DraftTask): ITask => {
     return {
+          ...taskData,
         id: nanoid(),
         isCompleted: false,
-        ...taskData
+        assignedTo: taskData.assignedTo ? taskData.assignedTo : null
     }
 }
 
@@ -61,6 +65,11 @@ const taskSlice = createSlice({
         updateFilter: (state, action: PayloadAction<"All" | "Low" | "Medium" | "High">) => {
             state.filter = action.payload;
         }
+    },
+    extraReducers:(builder)=>{
+        builder.addCase(deleteUser, (state, action)=>{
+            state.tasks.forEach((task)=> task.assignedTo === action.payload ? (task.assignedTo=null): task)
+        })
     }
 })
 

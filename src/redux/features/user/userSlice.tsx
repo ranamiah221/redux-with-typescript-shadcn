@@ -11,7 +11,11 @@ const initialState: InitialState = {
         {
             id: "ukCJQ6is_T3eLJx4lNgFi",
             name: "Rana"
-        }
+        },
+        {
+            id: "ukCJQ6is_T3eLJx4lNgFi9",
+            name: "Rony"
+        },
     ]
 }
 
@@ -28,7 +32,7 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        addUser: (state, action: PayloadAction<IUser>) => {
+        addUser: (state, action: PayloadAction<DraftUser>) => {
             const userData = createUser(action.payload)
             state.user.push(userData)
         },
