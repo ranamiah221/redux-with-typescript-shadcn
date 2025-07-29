@@ -1,69 +1,63 @@
-# React + TypeScript + Vite
+ <h1>TO DO List</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <p>
+    This project is a modern React application that integrates <strong>Redux Toolkit</strong> with <strong>TypeScript</strong> for robust state management and uses <strong>ShadCN UI</strong> components built on Tailwind CSS and Radix UI for beautiful and accessible design.
+  </p>
 
-Currently, two official plugins are available:
+  <h2> Live Preview</h2>
+  <p>Coming soon or deploy to <a href="https://vercel.com/" target="_blank">Vercel</a> / <a href="https://netlify.com/" target="_blank">Netlify</a>.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <h2> Tech Stack</h2>
+  <ul>
+    <li> React (with Vite)</li>
+    <li> Redux Toolkit</li>
+    <li> TypeScript</li>
+    <li> Tailwind CSS</li>
+    <li> ShadCN UI (Radix + Tailwind Components)</li>
+    <li> Zustand or React Context (optional)</li>
+  </ul>
 
-## Expanding the ESLint configuration
+  <h2> Folder Structure</h2>
+  <pre>
+redux-with-typescript-shadcn/
+├── src/
+│   ├── app/            # Redux store config
+│   ├── features/       # Slices and features
+│   ├── components/     # UI components (ShadCN)
+│   ├── pages/          # Page views
+│   ├── hooks/          # Custom hooks
+│   └── main.tsx
+├── public/
+├── index.html
+├── tailwind.config.ts
+└── vite.config.ts
+  </pre>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  <h2> Getting Started</h2>
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  <h3>1. Clone the Repository</h3>
+  <pre><code>git clone https://github.com/ranamiah221/redux-with-typescript-shadcn.git
+cd redux-with-typescript-shadcn</code></pre>
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+  <h3>2. Install Dependencies</h3>
+  <pre><code>npm install</code></pre>
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  <h3>3. Start Development Server</h3>
+  <pre><code>npm run dev</code></pre>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  <h3>4. Build for Production</h3>
+  <pre><code>npm run build</code></pre>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  <h2> Example Redux Slice</h2>
+  <p>The Redux state is typed using TypeScript interfaces, and actions are created using <code>createSlice</code> from Redux Toolkit.</p>
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  <h2> Using ShadCN Components</h2>
+  <p>This project uses the <a href="https://ui.shadcn.com" target="_blank">ShadCN UI</a> library, offering composable, accessible UI components styled with Tailwind.</p>
+
+ 
+
+  <h2> Author</h2>
+  <p>
+    <strong>Md Rana Rasul</strong><br>
+     GitHub: <a href="https://github.com/ranamiah221" target="_blank">@ranamiah221</a>
+  </p>
