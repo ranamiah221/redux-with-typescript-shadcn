@@ -5,7 +5,7 @@
   </p>
 
   <h2> Live Preview</h2>
-  <p>Coming soon or deploy to <a href="https://vercel.com/" target="_blank">Vercel</a> / <a href="https://netlify.com/" target="_blank">Netlify</a>.</p>
+  <p>Coming soon or deploy to <a href="https://redux-with-typescript-shadcn.vercel.app" target="_blank">To Do List</a></p>
 
   <h2> Tech Stack</h2>
   <ul>
